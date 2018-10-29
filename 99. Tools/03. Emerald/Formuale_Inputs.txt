@@ -1,0 +1,33 @@
+=INDIRECT(SUBSTITUTE(SUBSTITUTE($H$26, " ", ""), "-", ""))
+
+=(VLOOKUP(ROW()-1,Client_HP_Products!A$2:A$,2,FALSE)
+
+=(VLOOKUP(ROW()-1,Client_HP_Products!A$2$:A$,2,FALSE)
+
+=INDEX(tblVal[Gcm_Client],1,1):INDEX(tblVal[Gcm_Client],COUNTA(tblVal[Gcm_Client]))
+=INDEX(tblVal[Gcm_Client],1,1)
+
+
+Client_Hp_Product
+
+=Client_HP_Product[[#Data],[Gcm_Client]]
+
+
+=INDEX(Gcm_Client, MATCH(0, IF(MAX(NOT(COUNTIF($D$1:D1, Gcm_Client))*(COUNTIF(Gcm_Client, ">"&Gcm_Client)+1))=(COUNTIF(Gcm_Client, ">"&Gcm_Client)+1), 0, 1), 0))
+
+= IF((COUNTIF(Client_HP_Product[Gcm_Client],Client_HP_Product[Gcm_Client]) = 1), Client_HP_Product[Gcm_Client], "")
+
+=Client_HP_Product[Gcm_Client]
+
+=AUTO_CT_& $H$25
+
+intUpperDTL = CInt(Worksheets(StrSheetName).UsedRange.Rows.Count)
+=Client_HP_Products!$B$5:$B$7
+
+CONCATENATE("AUT_CT_",INDIRECT(SUBSTITUTE(SUBSTITUTE($H$26, " ", ""), "-", "")))
+Replace(Replace(Replace(Replace(CONCATENATE("AUT_CT_",$G$14), "-", ""), " ", ""), "&", ""), "/", "")
+
+=INDIRECT(CONCATENATE("AUT_CT_", SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE($G$14, " ", ""), "-", ""), "/", ""), "&", "")))
+
+
+=INDIRECT(CONCATENATE("AUT_HP_", SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE($G$15, " ", ""), "-", ""), "/", ""), "&", "")))
